@@ -32,8 +32,13 @@ renderList() {
 onload(){}
 render(){
   return(
-    <div className="card-grid">
-      {this.renderList()}
+    <div className="top-stories-wrapper">
+      <div className = "padding-div">
+        <h2 id="topstories" className="merriweather-font section-heading-dark text-center">Top stories right now.</h2>
+      </div>
+      <div className="card-grid">
+        {this.renderList()}
+      </div>
     </div>
   )
   }

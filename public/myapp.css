@@ -6,6 +6,10 @@ body{
   grid-template-columns: 1fr 1fr;
 }
 
+.top-stories-wrapper {
+  margin-top: 5rem;
+}
+
 .content-card {
   margin: 1em;
   border: 0;
@@ -56,9 +60,98 @@ body{
   font-family: 'Merriweather', serif;
 }
 
+html{
+  height:100%;
+}
+
+body {
+  height:100%;
+}
+
+.navbar {
+  background-color: #FFFDF6 !important;
+}
+
+.padding-div{
+  height:9.5rem;
+}
+
+.white-container{
+  background-color: #FFFDF6;
+}
+
+.col-lg > img {
+  max-width: 225px;
+}
+
+.row{
+  align-items: center;
+}
+
+.col-lg{
+  margin-top: 2.5em;
+}
+
+.toggler{
+  color: #1C1C1B !important;
+  border: 0px !important;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.page-wrapper{
+  display: block;
+  height: 80rem;
+}
+
+.page-wrapper-dark{
+  height:50%;
+  width:100%;
+  background-color: #1C1C1B;
+}
+
+.section-heading-dark{
+  color:#1C1C1B;
+  padding-top: 6% !important;
+}
+
+.heading-padding {
+  padding-top:30%;
+}
+
+.my-text-white{
+  color: #FFFDF6 !important;
+}
+
+.dark-text{
+  color: #1C1C1B;
+}
+
+.mybackground {
+  background-color: #1C1C1B !important;
+}
+
+.center-full-page {
+  max-width:50em;
+  height:100%;
+  text-align: center !important;
+  margin-left:auto;
+  margin-right: auto;
+  border-radius: 0px;
+}
+
+
 @media screen and (max-width:650px){
   .card-grid{
     grid-template-columns: 1fr;
+  }
+
+  .top-stories-wrapper{
+    position:relative;
+    top: 52.5rem;
   }
 }
 
