@@ -1,0 +1,31 @@
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30vh;
+  grid-row-gap: 1em;
+}
+
+/*.my-card-image {
+  height:100%;
+  width:auto;
+}*/
+
+.reem-kufi-font{
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.merriweather-font{
+  font-family: 'Merriweather', serif;
+}
+
+@media screen and (max-width:600px){
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
