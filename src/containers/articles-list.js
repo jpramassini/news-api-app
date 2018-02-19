@@ -17,13 +17,13 @@ renderList() {
     console.log(article.url);
     return(
       <div key={article.title} className='card content-card'>
-        <img className="card-img-top my-card-image" src={article.urlToImage ? article.urlToImage : "./assets/import_placeholder.png"}></img>
+        <img className="card-img-top my-card-image" src={article.urlToImage ? article.urlToImage : "./assets/placeholder-nowfeed.png"}></img>
         <div className="card-header reem-kufi-font">
           <h2 className="card-title">{article.title}</h2>
         </div>
         <div className="card-body">
           <p className="card-text merriweather-font">{article.description ? article.description : noDescription}</p>
-          <a className="btn btn-outline-dark" href={article.url} target="_blank">Full story</a>
+          <a className="btn btn-outline-dark reem-kufi-font" href={article.url} target="_blank">Full story</a>
       </div>
       </div>
     )
