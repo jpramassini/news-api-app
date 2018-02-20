@@ -7,7 +7,11 @@ body{
 }
 
 .top-stories-wrapper {
-  margin-top: 5rem;
+  margin-top: 2.5rem;
+}
+
+a:link{
+  text-decoration: none !important;
 }
 
 .content-card {
