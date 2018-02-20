@@ -46,7 +46,7 @@ export default () => {
             <img className="align-baseline" src="./assets/IGN_Entertainment_Logo.svg" />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg">
-            <img className="align-baseline" src="./assets/techcrunch-seeklogo.com.svg" />
+            <img className="align-baseline" src="./assets/TechCrunch_Logo.svg" />
           </div>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg">
             <img src="./assets/ESPN_wordmark.svg" />
