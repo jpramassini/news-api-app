@@ -1,4 +1,4 @@
-import NewsAPI from 'newsapi';
+import NewsAPI from '../myNewsApi';
 import thunk from 'redux-thunk';
 
 export function getTopArticles(dispatch){
