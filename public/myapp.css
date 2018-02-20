@@ -123,7 +123,7 @@ body {
 }
 
 .heading-padding {
-  padding-top:40vh;
+  padding-top:32.5vh;
 }
 
 .my-text-white{
@@ -154,6 +154,9 @@ body {
 @media screen and (max-width:600px){
   .card-grid{
     grid-template-columns: 1fr;
+  }
+  .heading-padding{
+    padding-top: 50%;
   }
 }
 
