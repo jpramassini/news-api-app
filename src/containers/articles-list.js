@@ -29,7 +29,6 @@ renderList() {
     )
   });
 }
-onload(){}
 render(){
   return(
     <div className="top-stories-wrapper">
