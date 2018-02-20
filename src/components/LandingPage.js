@@ -55,7 +55,6 @@ export default () => {
             <img src="./assets/Reuters_2008_logo.svg" />
           </div>
         </div>
-        <div></div>
       </div>
     </div>
   )
