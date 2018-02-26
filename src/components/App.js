@@ -7,6 +7,7 @@ import LandingPage from './LandingPage';
 import Fade from 'react-reveal/Fade';
 
 class App extends Component {
+  /*
   render() {
     return (
       <div>
@@ -21,6 +22,15 @@ class App extends Component {
 
       </div>
     );
+  }
+  */
+
+  render() {
+    return(
+      <div>
+        <UserSearch />
+      </div>
+    )
   }
 }
 
