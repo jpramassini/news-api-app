@@ -4,7 +4,7 @@ import QueryReducer from './query-reducer';
 
 const rootReducer = combineReducers({
   articles: ArticlesReducer,
-  currentQuery: QueryReducer
+  userArticles: QueryReducer
 });
 
 export default rootReducer;

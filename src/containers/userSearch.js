@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getTopArticleswithUserQuery} from '../actions';
+import { getArticleswithUserQuery } from '../actions';
 
 const countriesObject = require("../searchArrays/countries.json");
 
@@ -51,17 +51,18 @@ class UserSearch extends Component {
     };
     // assigning to JSON object which will be passed to action.
     let queryParams = {};
-    queryParams.q = search.value;
+    //queryParams.q = search.value;
     queryParams.country = countriesObject[countryLowered];
     queryParams.category = categoryVal;
     queryParams.sortBy = sortByVal;
     console.log(queryParams);
+    getArticleswithUserQuery(this.props.store.dispatch, queryParams)
   }
 
   render(){
     return(
       <div>
-        <form onSubmit={this.sendParams}>
+        <form onSubmit={this.sendParams.bind(this)}>
           <input id="search" type="text" placeholder="Search..."></input>
           <label for="countries">Countries</label>
           <select id = "country" name="countries">
@@ -93,7 +94,7 @@ class UserSearch extends Component {
 
 function mapStateToProps(state){
   return{
-    currentQuery: state.currentQuery
+    userArticles:state.currentQuery
   }
 }
 

@@ -16,7 +16,7 @@ class App extends Component {
           <LandingPage />
         </Fade>
         <Fade>
-          <ArticlesList store={this.props.store}/>
+          <ArticlesList topStories={true} store={this.props.store}/>
         </Fade>
         <UserSearch />
 
@@ -28,7 +28,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        <UserSearch />
+        <UserSearch store={this.props.store}/>
+        <ArticlesList topStories={false} store={this.props.store} />
       </div>
     )
   }
