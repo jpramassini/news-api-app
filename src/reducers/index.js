@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import ArticlesReducer from './getArticles';
+import ArticlesReducer from './get-articles-reducer';
+import QueryReducer from './query-reducer';
 
 const rootReducer = combineReducers({
-  articles: ArticlesReducer
+  articles: ArticlesReducer,
+  currentQuery: QueryReducer
 });
 
 export default rootReducer;
