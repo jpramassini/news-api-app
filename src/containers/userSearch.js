@@ -34,60 +34,89 @@ class UserSearch extends Component {
     event.preventDefault();
     const sender = event.target;
     console.log(sender);
+    let country;
+    let countryLowered;
+    let category;
+    let categoryVal;
+    let search;
+    let sortBy;
+    let sortByVal;
     // Getting individual elements of form.
-    const search = document.getElementById("search");
-    const country = document.getElementById("country");
-    const countryLowered = country.options[country.selectedIndex].text.toLowerCase();
-    const category = document.getElementById("category");
-    let categoryVal = category.options[category.selectedIndex].text.toLowerCase();
-    const sortBy = document.getElementById("sortBy");
-    let sortByVal = sortBy.options[sortBy.selectedIndex].text.toLowerCase();
+    if(this.props.type=="topHeadlinesSort"){
+      country = document.getElementById("country");
+      countryLowered = country.options[country.selectedIndex].text.toLowerCase();
+      category = document.getElementById("category");
+      categoryVal = category.options[category.selectedIndex].text.toLowerCase();
+      if(categoryVal == "all"){
+        categoryVal = ""
+      };
+    } else {
+    search = document.getElementById("search");
+    sortBy = document.getElementById("sortBy");
+    sortByVal = sortBy.options[sortBy.selectedIndex].text.toLowerCase();
 
     if(sortByVal == "most recent"){
       sortByVal = "publishedAt"
     };
-    if(categoryVal == "all"){
-      categoryVal = ""
-    };
+  }
     // assigning to JSON object which will be passed to action.
     let queryParams = {};
-    //queryParams.q = search.value;
-    queryParams.country = countriesObject[countryLowered];
-    queryParams.category = categoryVal;
-    queryParams.sortBy = sortByVal;
+    if(this.props.type == "topHeadlinesSort"){
+      queryParams = {};
+      queryParams.country = countriesObject[countryLowered];
+      queryParams.category = categoryVal;
+    } else {
+      queryParams = {};
+      queryParams.q = search.value;
+      queryParams.sortBy = sortByVal;
+    }
     console.log(queryParams);
-    getArticleswithUserQuery(this.props.store.dispatch, queryParams)
+    getArticleswithUserQuery(this.props.store.dispatch, queryParams, null)
   }
 
   render(){
+    if(this.props.type == "topHeadlinesSort"){
+      return(
+        <div>
+          <form>
+
+            <label for="countries">Countries</label>
+            <select id = "country" name="countries">
+              {this.renderOptionsFromJSON()}
+            </select>
+
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option>All</option>
+              <option>Business</option>
+              <option>Entertainment</option>
+              <option>Health</option>
+              <option>Science</option>
+              <option>Sports</option>
+              <option>Technology</option>
+            </select>
+            <input type="submit" value="Search" />
+
+          </form>
+        </div>
+      )
+    } else {
     return(
       <div>
         <form onSubmit={this.sendParams.bind(this)}>
           <input id="search" type="text" placeholder="Search..."></input>
-          <label for="countries">Countries</label>
-          <select id = "country" name="countries">
-            {this.renderOptionsFromJSON()}
-          </select>
-          <label for="category">Category</label>
-          <select id="category" name="category">
-            <option>All</option>
-            <option>Business</option>
-            <option>Entertainment</option>
-            <option>Health</option>
-            <option>Science</option>
-            <option>Sports</option>
-            <option>Technology</option>
-          </select>
+
           <label for="Sort by">Sort by:</label>
           <select id="sortBy" name="Sort by">
-            <option>Relevance</option>
             <option>Popularity</option>
             <option>Most Recent</option>
+            <option>Relevance</option>
           </select>
           <input type="submit" value="Search" />
         </form>
       </div>
     )
+  }
   }
 
 }

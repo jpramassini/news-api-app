@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <UserSearch store={this.props.store}/>
+        <UserSearch store={this.props.store} type="topHeadlinesSort"/>
         <ArticlesList topStories={false} store={this.props.store} />
       </div>
     )

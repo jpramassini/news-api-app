@@ -13,12 +13,22 @@ export function getTopArticles(dispatch){
     })
   }
 
-export function getArticleswithUserQuery(dispatch, queryParams){
-  newsapi.v2.topHeadlines(queryParams)
+export function getArticleswithUserQuery(dispatch, queryParams, senderType){
+  if(senderType == "search"){
+  console.log("search")
+  newsapi.v2.everything(queryParams)
     .then(response => {
       console.log(response.articles);
       dispatch(returnUserSearch(response.articles));
     })
+  } else {
+    console.log("topHeadlines")
+    newsapi.v2.topHeadlines(queryParams)
+      .then(response => {
+        console.log(response.articles);
+        dispatch(returnUserSearch(response.articles));
+      })
+  }
 }
 
 function receiveFirstPageArticles(articles){
